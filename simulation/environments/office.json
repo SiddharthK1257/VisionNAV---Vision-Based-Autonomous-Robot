@@ -1,0 +1,246 @@
+{
+  "environment_type": "office",
+  "width": 18.0,
+  "height": 12.0,
+  "robot_start": [
+    2.0,
+    2.0,
+    0.0
+  ],
+  "static_obstacles": [
+    {
+      "id": "off_wall_n",
+      "name": "North Wall",
+      "class_name": "wall",
+      "x": 9.0,
+      "y": 11.8,
+      "width": 18.0,
+      "height": 0.4,
+      "color": "#334155",
+      "is_furniture": false,
+      "attribute": null
+    },
+    {
+      "id": "off_wall_s",
+      "name": "South Wall",
+      "class_name": "wall",
+      "x": 9.0,
+      "y": 0.2,
+      "width": 18.0,
+      "height": 0.4,
+      "color": "#334155",
+      "is_furniture": false,
+      "attribute": null
+    },
+    {
+      "id": "off_wall_w",
+      "name": "West Wall",
+      "class_name": "wall",
+      "x": 0.2,
+      "y": 6.0,
+      "width": 0.4,
+      "height": 12.0,
+      "color": "#334155",
+      "is_furniture": false,
+      "attribute": null
+    },
+    {
+      "id": "off_wall_e",
+      "name": "East Wall",
+      "class_name": "wall",
+      "x": 17.8,
+      "y": 6.0,
+      "width": 0.4,
+      "height": 12.0,
+      "color": "#334155",
+      "is_furniture": false,
+      "attribute": null
+    },
+    {
+      "id": "conf_wall_1",
+      "name": "Conference Room Glass",
+      "class_name": "wall",
+      "x": 6.5,
+      "y": 8.5,
+      "width": 0.3,
+      "height": 6.0,
+      "color": "#64748b",
+      "is_furniture": false,
+      "attribute": null
+    },
+    {
+      "id": "conf_table",
+      "name": "Conference Table",
+      "class_name": "table",
+      "x": 3.5,
+      "y": 8.5,
+      "width": 3.0,
+      "height": 1.6,
+      "color": "#475569",
+      "is_furniture": true,
+      "attribute": null
+    },
+    {
+      "id": "chair_c1",
+      "name": "Executive Chair",
+      "class_name": "chair",
+      "x": 2.0,
+      "y": 8.5,
+      "width": 0.6,
+      "height": 0.6,
+      "color": "#64748b",
+      "is_furniture": true,
+      "attribute": null
+    },
+    {
+      "id": "chair_c2",
+      "name": "Executive Chair",
+      "class_name": "chair",
+      "x": 5.0,
+      "y": 8.5,
+      "width": 0.6,
+      "height": 0.6,
+      "color": "#64748b",
+      "is_furniture": true,
+      "attribute": null
+    },
+    {
+      "id": "desk_pod_1",
+      "name": "Desk Workstation 1",
+      "class_name": "table",
+      "x": 11.5,
+      "y": 8.5,
+      "width": 2.8,
+      "height": 1.4,
+      "color": "#64748b",
+      "is_furniture": true,
+      "attribute": null
+    },
+    {
+      "id": "laptop_1",
+      "name": "Developer Laptop",
+      "class_name": "laptop",
+      "x": 11.2,
+      "y": 8.5,
+      "width": 0.5,
+      "height": 0.4,
+      "color": "#38bdf8",
+      "is_furniture": false,
+      "attribute": null
+    },
+    {
+      "id": "desk_pod_2",
+      "name": "Desk Workstation 2",
+      "class_name": "table",
+      "x": 11.5,
+      "y": 4.0,
+      "width": 2.8,
+      "height": 1.4,
+      "color": "#64748b",
+      "is_furniture": true,
+      "attribute": null
+    },
+    {
+      "id": "coffee_counter",
+      "name": "Coffee Bar Counter",
+      "class_name": "table",
+      "x": 15.5,
+      "y": 2.0,
+      "width": 2.5,
+      "height": 1.0,
+      "color": "#94a3b8",
+      "is_furniture": true,
+      "attribute": null
+    },
+    {
+      "id": "bottle_1",
+      "name": "Water Bottle",
+      "class_name": "bottle",
+      "x": 15.5,
+      "y": 2.0,
+      "width": 0.3,
+      "height": 0.3,
+      "color": "#06b6d4",
+      "is_furniture": false,
+      "attribute": null
+    }
+  ],
+  "dynamic_obstacles": [
+    {
+      "id": "person_colleague",
+      "name": "Office Colleague Sarah",
+      "class_name": "person",
+      "x": 8.5,
+      "y": 4.5,
+      "radius": 0.38,
+      "speed": 0.28,
+      "waypoints": [
+        [
+          8.5,
+          4.5
+        ],
+        [
+          8.5,
+          7.5
+        ],
+        [
+          14.0,
+          7.5
+        ],
+        [
+          14.0,
+          4.5
+        ],
+        [
+          8.5,
+          4.5
+        ]
+      ],
+      "current_target_index": 0,
+      "attribute": "colleague",
+      "color": "#ec4899"
+    }
+  ],
+  "targets": [
+    {
+      "id": "tgt_meeting",
+      "name": "Meeting Area",
+      "class_name": "meeting_area",
+      "attribute": "conference",
+      "x": 3.5,
+      "y": 8.5,
+      "radius": 0.6,
+      "color": "#8b5cf6"
+    },
+    {
+      "id": "tgt_blue_box",
+      "name": "Blue Archive Box",
+      "class_name": "box",
+      "attribute": "blue",
+      "x": 15.5,
+      "y": 9.0,
+      "radius": 0.45,
+      "color": "#2563eb"
+    },
+    {
+      "id": "tgt_charge",
+      "name": "Docking Bay",
+      "class_name": "charging_station",
+      "attribute": "yellow",
+      "x": 2.0,
+      "y": 2.0,
+      "radius": 0.5,
+      "color": "#eab308"
+    },
+    {
+      "id": "tgt_laptop",
+      "name": "Developer Laptop",
+      "class_name": "laptop",
+      "attribute": "silver",
+      "x": 11.2,
+      "y": 8.5,
+      "radius": 0.4,
+      "color": "#38bdf8"
+    }
+  ]
+}

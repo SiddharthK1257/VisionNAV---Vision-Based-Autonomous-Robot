@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - SIMULATION_MODE=true
+      - HOST=0.0.0.0
+      - PORT=8000
+    volumes:
+      - ./backend:/app/backend
+      - ./simulation:/app/simulation
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+      - VITE_WS_URL=ws://localhost:8000/ws/robot
+    depends_on:
+      - backend
+    restart: unless-stopped

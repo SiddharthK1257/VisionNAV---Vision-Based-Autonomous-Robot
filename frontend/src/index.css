@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: #060911;
+    color: #e2e8f0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+  }
+
+  code, kbd, samp, pre, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+    font-feature-settings: "tnum" 1, "zero" 1;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Precision scrollbars for dense robotics panels */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #090e1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Aerospace / Robotics Radar Pulse */
+@keyframes radar-pulse {
+  0% { transform: scale(0.96); opacity: 0.9; }
+  50% { transform: scale(1.12); opacity: 0.35; }
+  100% { transform: scale(0.96); opacity: 0.9; }
+}
+
+.radar-glow {
+  animation: radar-pulse 2.2s infinite ease-in-out;
+}
+
+/* Subtle status LED pulse (non-distracting, strictly communicates state) */
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.9); }
+}
+
+.status-active-pulse {
+  animation: status-pulse 2s infinite ease-in-out;
+}
+
+/* Tactical Background Grid Pattern */
+.bg-tactical-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Precision Corner Brackets for HUD */
+.hud-corner-tl {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 10px;
+  height: 10px;
+  border-top: 1.5px solid rgba(6, 182, 212, 0.6);
+  border-left: 1.5px solid rgba(6, 182, 212, 0.6);
+  pointer-events: none;
+}
+.hud-corner-tr {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 10px;
+  height: 10px;
+  border-top: 1.5px solid rgba(6, 182, 212, 0.6);
+  border-right: 1.5px solid rgba(6, 182, 212, 0.6);
+  pointer-events: none;
+}
+.hud-corner-bl {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 1.5px solid rgba(6, 182, 212, 0.6);
+  border-left: 1.5px solid rgba(6, 182, 212, 0.6);
+  pointer-events: none;
+}
+.hud-corner-br {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 1.5px solid rgba(6, 182, 212, 0.6);
+  border-right: 1.5px solid rgba(6, 182, 212, 0.6);
+  pointer-events: none;
+}

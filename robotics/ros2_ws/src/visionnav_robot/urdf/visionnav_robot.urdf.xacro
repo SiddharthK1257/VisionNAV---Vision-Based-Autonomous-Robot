@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="visionnav_robot">
+
+  <!-- Materials -->
+  <material name="chassis_dark"><color rgba="0.12 0.16 0.22 1.0"/></material>
+  <material name="cyan_accent"><color rgba="0.02 0.71 0.83 1.0"/></material>
+  <material name="wheel_rubber"><color rgba="0.08 0.08 0.08 1.0"/></material>
+  <material name="lens_glass"><color rgba="0.1 0.9 0.9 0.8"/></material>
+
+  <!-- Base footprint -->
+  <link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0.10" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Base Link / Chassis -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0.06" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.60 0.40 0.18"/>
+      </geometry>
+      <material name="chassis_dark"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.06" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.60 0.40 0.18"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="12.0"/>
+      <origin xyz="0 0 0.06"/>
+      <inertia ixx="0.19" ixy="0.0" ixz="0.0" iyy="0.41" iyz="0.0" izz="0.52"/>
+    </inertial>
+  </link>
+
+  <!-- Left Wheel -->
+  <link name="left_wheel_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57079 0 0"/>
+      <geometry>
+        <cylinder radius="0.10" length="0.05"/>
+      </geometry>
+      <material name="wheel_rubber"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57079 0 0"/>
+      <geometry>
+        <cylinder radius="0.10" length="0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.5"/>
+      <inertia ixx="0.004" ixy="0" ixz="0" iyy="0.007" iyz="0" izz="0.004"/>
+    </inertial>
+  </link>
+
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel_link"/>
+    <origin xyz="0.0 0.225 0.0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Right Wheel -->
+  <link name="right_wheel_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57079 0 0"/>
+      <geometry>
+        <cylinder radius="0.10" length="0.05"/>
+      </geometry>
+      <material name="wheel_rubber"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57079 0 0"/>
+      <geometry>
+        <cylinder radius="0.10" length="0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.5"/>
+      <inertia ixx="0.004" ixy="0" ixz="0" iyy="0.007" iyz="0" izz="0.004"/>
+    </inertial>
+  </link>
+
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel_link"/>
+    <origin xyz="0.0 -0.225 0.0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Front Caster Support -->
+  <link name="front_caster_link">
+    <visual>
+      <geometry><sphere radius="0.05"/></geometry>
+      <material name="wheel_rubber"/>
+    </visual>
+    <collision>
+      <geometry><sphere radius="0.05"/></geometry>
+    </collision>
+    <inertial><mass value="0.5"/><inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0005" iyz="0" izz="0.0005"/></inertial>
+  </link>
+
+  <joint name="front_caster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_caster_link"/>
+    <origin xyz="0.22 0.0 -0.05" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Rear Caster Support -->
+  <link name="rear_caster_link">
+    <visual>
+      <geometry><sphere radius="0.05"/></geometry>
+      <material name="wheel_rubber"/>
+    </visual>
+    <collision>
+      <geometry><sphere radius="0.05"/></geometry>
+    </collision>
+    <inertial><mass value="0.5"/><inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0005" iyz="0" izz="0.0005"/></inertial>
+  </link>
+
+  <joint name="rear_caster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rear_caster_link"/>
+    <origin xyz="-0.22 0.0 -0.05" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Front RGB Camera -->
+  <link name="camera_link">
+    <visual>
+      <geometry><box size="0.05 0.12 0.04"/></geometry>
+      <material name="cyan_accent"/>
+    </visual>
+  </link>
+
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <origin xyz="0.28 0.0 0.12" rpy="0 0 0"/>
+  </joint>
+
+  <!-- 2D/3D LiDAR Turret -->
+  <link name="laser_link">
+    <visual>
+      <geometry><cylinder radius="0.06" length="0.05"/></geometry>
+      <material name="cyan_accent"/>
+    </visual>
+  </link>
+
+  <joint name="laser_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="laser_link"/>
+    <origin xyz="0.10 0.0 0.18" rpy="0 0 0"/>
+  </joint>
+
+  <!-- IMU -->
+  <link name="imu_link"/>
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/>
+  </joint>
+
+</robot>

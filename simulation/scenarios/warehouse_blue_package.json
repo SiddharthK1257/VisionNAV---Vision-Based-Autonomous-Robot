@@ -1,0 +1,22 @@
+{
+  "scenario_id": "warehouse_blue_package_demo",
+  "name": "Judge Demo: Warehouse Blue Package Retrieval with Dynamic Detour",
+  "environment": "warehouse",
+  "mission_prompt": "Find the blue package and navigate to it.",
+  "target": {
+    "type": "object",
+    "class_name": "box",
+    "attribute": "blue",
+    "location": [16.5, 5.5]
+  },
+  "robot_initial_pose": [2.0, 2.0, 0.0],
+  "expected_events": [
+    "MISSION_START",
+    "TARGET_IDENTIFIED",
+    "GLOBAL_PLAN_GENERATED",
+    "OBSTACLE_ENCOUNTER_PEDESTRIAN",
+    "SAFETY_DECELERATION",
+    "DYNAMIC_REPLAN",
+    "TARGET_REACHED"
+  ]
+}

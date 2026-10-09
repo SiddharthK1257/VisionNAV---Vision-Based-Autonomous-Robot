@@ -1,0 +1,294 @@
+{
+  "environment_type": "warehouse",
+  "width": 20.0,
+  "height": 14.0,
+  "robot_start": [
+    2.0,
+    2.0,
+    0.0
+  ],
+  "static_obstacles": [
+    {
+      "id": "wall_north",
+      "name": "North Wall",
+      "class_name": "wall",
+      "x": 10.0,
+      "y": 13.8,
+      "width": 20.0,
+      "height": 0.4,
+      "color": "#334155",
+      "is_furniture": false,
+      "attribute": null
+    },
+    {
+      "id": "wall_south",
+      "name": "South Wall",
+      "class_name": "wall",
+      "x": 10.0,
+      "y": 0.2,
+      "width": 20.0,
+      "height": 0.4,
+      "color": "#334155",
+      "is_furniture": false,
+      "attribute": null
+    },
+    {
+      "id": "wall_west",
+      "name": "West Wall",
+      "class_name": "wall",
+      "x": 0.2,
+      "y": 7.0,
+      "width": 0.4,
+      "height": 14.0,
+      "color": "#334155",
+      "is_furniture": false,
+      "attribute": null
+    },
+    {
+      "id": "wall_east",
+      "name": "East Wall",
+      "class_name": "wall",
+      "x": 19.8,
+      "y": 7.0,
+      "width": 0.4,
+      "height": 14.0,
+      "color": "#334155",
+      "is_furniture": false,
+      "attribute": null
+    },
+    {
+      "id": "shelf_1",
+      "name": "Storage Rack A",
+      "class_name": "shelf",
+      "x": 5.5,
+      "y": 4.5,
+      "width": 1.4,
+      "height": 5.0,
+      "color": "#475569",
+      "is_furniture": true,
+      "attribute": "rack"
+    },
+    {
+      "id": "shelf_2",
+      "name": "Storage Rack B",
+      "class_name": "shelf",
+      "x": 9.5,
+      "y": 9.5,
+      "width": 1.4,
+      "height": 5.5,
+      "color": "#475569",
+      "is_furniture": true,
+      "attribute": "rack"
+    },
+    {
+      "id": "shelf_3",
+      "name": "Storage Rack C",
+      "class_name": "shelf",
+      "x": 13.5,
+      "y": 4.5,
+      "width": 1.4,
+      "height": 5.0,
+      "color": "#475569",
+      "is_furniture": true,
+      "attribute": "rack"
+    },
+    {
+      "id": "obs_barrier",
+      "name": "Safety Staging Barrier",
+      "class_name": "obstacle",
+      "x": 9.5,
+      "y": 3.0,
+      "width": 1.4,
+      "height": 2.0,
+      "color": "#64748b",
+      "is_furniture": false,
+      "attribute": "barrier"
+    },
+    {
+      "id": "table_pack",
+      "name": "Packing Table",
+      "class_name": "table",
+      "x": 3.5,
+      "y": 11.0,
+      "width": 2.5,
+      "height": 1.2,
+      "color": "#94a3b8",
+      "is_furniture": true,
+      "attribute": null
+    },
+    {
+      "id": "table_inspect",
+      "name": "QA Inspection Table",
+      "class_name": "table",
+      "x": 16.5,
+      "y": 11.0,
+      "width": 2.5,
+      "height": 1.2,
+      "color": "#94a3b8",
+      "is_furniture": true,
+      "attribute": null
+    },
+    {
+      "id": "box_pallet_1",
+      "name": "Brown Pallet Crate",
+      "class_name": "box",
+      "x": 7.5,
+      "y": 1.8,
+      "width": 1.0,
+      "height": 1.0,
+      "color": "#b45309",
+      "is_furniture": false,
+      "attribute": "brown"
+    },
+    {
+      "id": "box_red",
+      "name": "Red Emergency Kit",
+      "class_name": "box",
+      "x": 17.5,
+      "y": 2.5,
+      "width": 0.8,
+      "height": 0.8,
+      "color": "#ef4444",
+      "is_furniture": false,
+      "attribute": "red"
+    },
+    {
+      "id": "chair_1",
+      "name": "Forklift Operator Chair",
+      "class_name": "chair",
+      "x": 2.0,
+      "y": 11.0,
+      "width": 0.7,
+      "height": 0.7,
+      "color": "#64748b",
+      "is_furniture": true,
+      "attribute": null
+    },
+    {
+      "id": "backpack_worker",
+      "name": "Technician Backpack",
+      "class_name": "backpack",
+      "x": 3.5,
+      "y": 11.3,
+      "width": 0.45,
+      "height": 0.45,
+      "color": "#1e40af",
+      "is_furniture": false,
+      "attribute": "blue"
+    },
+    {
+      "id": "bottle_water",
+      "name": "Stainless Water Bottle",
+      "class_name": "bottle",
+      "x": 3.8,
+      "y": 10.8,
+      "width": 0.25,
+      "height": 0.25,
+      "color": "#06b6d4",
+      "is_furniture": false,
+      "attribute": "cyan"
+    },
+    {
+      "id": "laptop_qa",
+      "name": "QA Inventory Terminal",
+      "class_name": "laptop",
+      "x": 16.5,
+      "y": 11.0,
+      "width": 0.5,
+      "height": 0.4,
+      "color": "#38bdf8",
+      "is_furniture": false,
+      "attribute": "silver"
+    },
+    {
+      "id": "door_bay",
+      "name": "Loading Bay Roll-Up Door",
+      "class_name": "door",
+      "x": 19.8,
+      "y": 7.0,
+      "width": 0.4,
+      "height": 3.0,
+      "color": "#94a3b8",
+      "is_furniture": false,
+      "attribute": "metal"
+    }
+  ],
+  "dynamic_obstacles": [
+    {
+      "id": "person_worker_1",
+      "name": "Warehouse Technician Alex",
+      "class_name": "person",
+      "x": 9.5,
+      "y": 6.5,
+      "radius": 0.4,
+      "speed": 0.35,
+      "waypoints": [
+        [
+          9.5,
+          6.5
+        ],
+        [
+          9.5,
+          8.0
+        ],
+        [
+          11.5,
+          8.0
+        ],
+        [
+          11.5,
+          6.0
+        ],
+        [
+          9.5,
+          6.5
+        ]
+      ],
+      "current_target_index": 0,
+      "attribute": "worker",
+      "color": "#f97316"
+    }
+  ],
+  "targets": [
+    {
+      "id": "tgt_blue_box",
+      "name": "Blue Shipping Package",
+      "class_name": "box",
+      "attribute": "blue",
+      "x": 16.5,
+      "y": 5.5,
+      "radius": 0.45,
+      "color": "#2563eb"
+    },
+    {
+      "id": "tgt_charge",
+      "name": "Charging Station",
+      "class_name": "charging_station",
+      "attribute": "yellow",
+      "x": 2.0,
+      "y": 2.0,
+      "radius": 0.5,
+      "color": "#eab308"
+    },
+    {
+      "id": "tgt_inspect",
+      "name": "Inspection Zone",
+      "class_name": "inspection_zone",
+      "attribute": "green",
+      "x": 16.5,
+      "y": 11.0,
+      "radius": 0.6,
+      "color": "#10b981"
+    },
+    {
+      "id": "tgt_red_box",
+      "name": "Red Package",
+      "class_name": "box",
+      "attribute": "red",
+      "x": 17.5,
+      "y": 2.5,
+      "radius": 0.45,
+      "color": "#ef4444"
+    }
+  ]
+}
